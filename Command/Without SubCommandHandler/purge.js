@@ -48,10 +48,14 @@ module.exports = {
         )
     ),
   async execute(interaction, client) {
-    switch (interaction.getSubcommand) {
+    let amount = interaction.options.getInteger("count");
+    const subCommand = interaction.options.getSubcommand();
+    const users = interaction.options.getUser("user");
+    const Messages = await interaction.channel.messages.fetch();
+
+    switch (subCommand) {
       case "all":
         {
-          const amount = interaction.options.getInteger("count");
           if (amount > 100) amount = 100;
           const fetch = await interaction.channel.messages.fetch({
             limit: amount,
@@ -90,7 +94,6 @@ module.exports = {
         break;
 
       case "bot": {
-        const amount = interaction.options.getInteger("count");
         const Messages = await interaction.channel.messages.fetch();
         if (amount > 100) amount = 100;
         let ii = 0;
@@ -130,9 +133,6 @@ module.exports = {
       }
       case "user":
         {
-          const users = interaction.options.getUser("user");
-          const amount = interaction.options.getInteger("count");
-          const Messages = await interaction.channel.messages.fetch();
           if (amount > 100) amount = 100;
           let i = 0;
           const filtered = [];
