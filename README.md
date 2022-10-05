@@ -1,6 +1,8 @@
 # Purge Cmd
 DJS Purge Command (Discord.js V14)
 
+![💻Purge_Command_D js_v14](https://user-images.githubusercontent.com/94427416/194107761-e1382488-86e3-49fe-b51e-3128cb070ba5.png)
+
 # MidNight Bot
 - [Click Me](https://discord.com/api/oauth2/authorize?client_id=933628005987795035&permissions=1426197654646&scope=bot%20applications.commands) to Invite The Bot
 - [Click Me](https://discord.gg/aXnJp96cUz) To reach my support Server
@@ -15,3 +17,6 @@ DJS Purge Command (Discord.js V14)
 # Credits
 - Thanks [Lunar](https://github.com/LunarTaku) For Sub Command Handler. 
 - And [Lyx's](https://discord.gg/7jcbjKCjsb) Server For Support
+
+# Main Credits
+- [Sneaky Hub](https://discord.gg/j5NpEqfh73)
