@@ -19,4 +19,9 @@ DJS Purge Command (Discord.js V14)
 - And [Lyx's](https://discord.gg/7jcbjKCjsb) Server For Support
 
 # Main Credits
+- For hosting the bot
 - [Sneaky Hub](https://discord.gg/j5NpEqfh73)
+# Previews
+![image](https://user-images.githubusercontent.com/94427416/194115120-20ff2c35-8224-4c15-935f-01b1007fce4c.png)
+![image](https://user-images.githubusercontent.com/94427416/194115564-81036766-852d-4559-b02c-3956f45ae7de.png)
+
