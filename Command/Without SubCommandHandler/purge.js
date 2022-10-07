@@ -1,16 +1,26 @@
-const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("discord.js");
+const {
+  SlashCommandBuilder,
+  PermissionFlagsBits,
+  EmbedBuilder,
+} = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("purge")
-    .setDescription("purge a specific amount of messages from a target or channel.")
+    .setDescription(
+      "purge a specific amount of messages from a target or channel."
+    )
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages)
     .addSubcommand((subcommand) =>
       subcommand
         .setName("all")
         .setDescription("Remove all Messages.")
         .addIntegerOption((options) =>
-          options.setName("count").setDescription("input count").setMaxValue(100).setRequired(true)
+          options
+            .setName("count")
+            .setDescription("input count")
+            .setMinValue(1)
+            .setRequired(true)
         )
     )
     .addSubcommand((subcommand) =>
@@ -18,20 +28,31 @@ module.exports = {
         .setName("user")
         .setDescription("Removes all messages from the user given.")
         .addIntegerOption((options) =>
-          options.setName("count").setDescription("input count").setMaxValue(100).setRequired(true)
+          options
+            .setName("count")
+            .setDescription("input count")
+            .setMinValue(1)
+            .setRequired(true)
         )
-        .addUserOption((options) => options.setName("user").setDescription("input user").setRequired(true))
+        .addUserOption((options) =>
+          options.setName("user").setDescription("input user").setRequired(true)
+        )
     )
     .addSubcommand((subcommand) =>
       subcommand
         .setName("bot")
         .setDescription("Removes a bot user's messages.")
         .addIntegerOption((options) =>
-          options.setName("count").setDescription("input count").setMaxValue(100).setRequired(true)
+          options
+            .setName("count")
+            .setDescription("input count")
+            .setMinValue(1)
+            .setRequired(true)
         )
     ),
   async execute(interaction, client) {
     let amount = interaction.options.getInteger("count");
+    if (amount > 100) amount = 100;
     const fetch = await interaction.channel.messages.fetch({ limit: amount });
     const user = interaction.options.getUser("user");
 
@@ -45,10 +66,16 @@ module.exports = {
 
       const userMessageMap = Object.entries(results);
 
-      const finalResult = `${deletedMessages.size} message${deletedMessages.size > 1 ? "s" : ""
-        } were removed!\n\n${userMessageMap.map(([user, messages]) => `**${user}** : ${messages}`).join("\n")}`;
+      const finalResult = `${deletedMessages.size} message${
+        deletedMessages.size > 1 ? "s" : ""
+      } were removed!\n\n${userMessageMap
+        .map(([user, messages]) => `**${user}** : ${messages}`)
+        .join("\n")}`;
 
-      const msg = await interaction.reply({ content: `${finalResult}`, fetchReply: true });
+      const msg = await interaction.reply({
+        content: `${finalResult}`,
+        fetchReply: true,
+      });
       setTimeout(() => {
         msg.delete();
       }, 5000);
