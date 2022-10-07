@@ -19,6 +19,7 @@ module.exports = {
           options
             .setName("count")
             .setDescription("input count")
+            .setMinValue(1)
             .setRequired(true)
         )
     )
@@ -30,6 +31,7 @@ module.exports = {
           options
             .setName("count")
             .setDescription("input count")
+            .setMinValue(1)
             .setRequired(true)
         )
         .addUserOption((options) =>
@@ -44,6 +46,7 @@ module.exports = {
           options
             .setName("count")
             .setDescription("input count")
+            .setMinValue(1)
             .setRequired(true)
         )
     ),
