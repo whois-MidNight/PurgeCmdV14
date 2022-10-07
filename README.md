@@ -16,6 +16,7 @@ DJS Purge Command (Discord.js V14)
 2. If you are using SubCommand Handler Made By [Lunar](https://github.com/LunarTaku) Copy the With-SubCommand Folder Code
 - Put The PurgeFunction File in Systems If You don't have one Create in Main Folder Only.
 3. If not copy the without-SubCommand Code
+4. Make Sure The Path is Correct to Function File
 # System Folder 
 - System Folder Should Look like this:-
 
