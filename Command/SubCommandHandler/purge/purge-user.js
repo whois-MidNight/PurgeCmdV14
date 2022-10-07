@@ -3,7 +3,7 @@ const {
   PermissionFlagsBits,
   EmbedBuilder,
 } = require("discord.js");
-const { results } = require("../../../Systems/purge-function");
+const { results } = require("../../../Systems/PurgeFunction");
 
 module.exports = {
   subCommand: "purge.user",
