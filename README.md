@@ -18,6 +18,8 @@ DJS Purge Command (Discord.js V14)
 3. If not copy the without-SubCommand Code
 # System Folder 
 - System Folder Should Look like this:-
+
+
 ![image](https://user-images.githubusercontent.com/94427416/194563607-0f493422-0a22-463c-a5db-8b934422bb59.png)
 
 # Credits
