@@ -52,7 +52,8 @@ module.exports = {
     ),
   async execute(interaction, client) {
     let amount = interaction.options.getInteger("count");
-    if (amount > 100) amount = 100;
+    if (amount >= 100) amount = 100;
+    if (!amount <= 1) amount = 1;
     const fetch = await interaction.channel.messages.fetch({ limit: amount });
     const user = interaction.options.getUser("user");
 
